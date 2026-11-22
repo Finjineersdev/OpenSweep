@@ -341,7 +341,10 @@ struct ReviewSheet: View {
                     if shown.projects.count > 1 {
                         Text(URL(fileURLWithPath: p.root).lastPathComponent).font(.headline).foregroundStyle(Brand.text)
                     }
-                ForEach(p.items, id: \.path) { item in
+                // Keyed by full path: keyed by name alone, List reused one
+                // project's row (and size) for the same folder in another.
+                ForEach(p.items.map { (key: p.root + "/" + $0.path, item: $0) }, id: \.key) { row in
+                    let item = row.item
                     HStack {
                         Image(systemName: item.action == .move ? "arrow.right.circle.fill" : "minus.circle")
                             .foregroundStyle(item.action == .move ? Brand.teal : Brand.slate)
@@ -373,24 +376,28 @@ struct ReviewSheet: View {
                 Spacer()
                 if done == nil {
                     Button("Cancel") { dismiss() }.keyboardShortcut(.cancelAction)
-                    Button("Move \(shown.folders) folders") {
-                        Task {
-                            busy = true
-                            done = await model.clean(plan, execute: true)
-                            busy = false
-                        }
-                    }
+                    Button("Move \(shown.folders) folders") { confirm() }
                     .buttonStyle(PrimaryButtonStyle())
                     .disabled(shown.folders == 0 || busy)
                     .accessibilityIdentifier("confirmClean")
+                    .demoPress("confirmClean") { confirm() }
                 } else {
                     Button("Done") { dismiss() }.keyboardShortcut(.defaultAction)
                         .accessibilityIdentifier("done")
+                        .demoPress("done") { dismiss() }
                 }
             }
         }
         .padding(24)
         .frame(width: 560, height: plan.count > 1 ? 560 : 460)
+    }
+
+    private func confirm() {
+        Task {
+            busy = true
+            done = await model.clean(plan, execute: true)
+            busy = false
+        }
     }
 
     private var projectsText: String {
@@ -454,18 +461,21 @@ struct ReviewAllButton: View {
 
     var body: some View {
         let ready = model.readyPlan(rule: rule)
-        Button(title) {
-            Task {
-                busy = true
-                plan = ready
-                review = await model.clean(plan, execute: false)
-                busy = false
-            }
-        }
+        Button(title) { start(ready) }
         .buttonStyle(PrimaryButtonStyle())
         .disabled(ready.isEmpty || busy || model.scanning)
         .help(ready.isEmpty ? "Nothing is ready: active, pinned and reinstall folders are left for you to pick." : "Safe folders in idle and dormant projects")
         .accessibilityIdentifier(rule.map { "reviewAll.\($0)" } ?? "reviewAll")
+        .demoPress(rule.map { "reviewAll.\($0)" } ?? "reviewAll") { start(ready) }
         .sheet(item: $review) { out in ReviewSheet(plan: plan, dryRun: out) }
+    }
+
+    private func start(_ ready: [CleanPick]) {
+        Task {
+            busy = true
+            plan = ready
+            review = await model.clean(plan, execute: false)
+            busy = false
+        }
     }
 }

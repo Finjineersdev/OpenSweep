@@ -19,10 +19,6 @@
   <a href="https://github.com/Finjineersdev/homebrew-tap"><img src="https://img.shields.io/badge/brew-Finjineersdev%2Ftap%2Fopensweep-fbb040?style=flat-square" alt="Homebrew" /></a>
 </p>
 
-<p align="center">
-  <img src="docs/media/smartcare.gif" width="880" alt="Smart Care: scan, then review on the map" />
-</p>
-
 ---
 
 ## Why another Mac cleaner
@@ -53,11 +49,6 @@ Everything else a cleaner should do is here too, but with the same honesty: Dock
 | **Space Lens** | Treemap of any folder with header bands, drill-down, reveal, quarantine. Large & old files tab. |
 | **Quarantine** | Every clean is a restorable run with its original paths. Expired runs are purged automatically. |
 | **Menu bar** | CPU, memory, disk, CPU temperature, fan rpm with manual control, a network speed test, and your last security check. |
-
-<p align="center">
-  <img src="docs/media/projects.gif" width="430" alt="Projects map" />
-  <img src="docs/media/devstack.gif" width="430" alt="Dev Stack map" />
-</p>
 
 ## Install
 

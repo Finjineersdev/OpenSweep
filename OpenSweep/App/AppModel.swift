@@ -54,6 +54,10 @@ final class AppModel {
     private(set) var cachesLoading = false
 
     var error: String?
+    #if DEBUG
+    /// The button the README demo presses next (DemoWalkthrough).
+    var demoPress: String?
+    #endif
 
     let engine: Engine?
 

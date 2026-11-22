@@ -28,9 +28,21 @@ npm is never run.
 The walkthrough expects projects named `shop-web` (dormant Next.js),
 `live-api` (active) and `keep-me` (pinned); see `OpenSweep/App/QAWalkthrough.swift`.
 
-README screenshots (`docs/assets/screens`) come from this walkthrough in
-both appearances, with the projects under `$Q/home/code` so paths show as
-`~/code/...`; resize with `sips -Z 1400`.
+## README media
+
+Screenshots (`docs/assets/screens`) and `docs/assets/one-click.gif` come
+from a scripted demo in the Debug app against a stand-in engine with made-up
+data: a 2 TB Mac with 412 projects and 1.25 TB of build folders. Nothing on
+disk is read or moved.
+
+```bash
+scripts/demo/record.sh /tmp/media-dark dark          # screenshots + demo.mp4 of the window
+scripts/demo/record.sh /tmp/media-light light --no-video
+```
+
+The video needs Screen Recording permission for your terminal; the app hides the
+pointer while it plays. `timeline.json` lists when and where each button was
+pressed. Resize screenshots with `sips -Z 1600`.
 
 ## UI tests
 
