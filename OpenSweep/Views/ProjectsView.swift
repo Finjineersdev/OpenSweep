@@ -341,7 +341,10 @@ struct ReviewSheet: View {
                     if shown.projects.count > 1 {
                         Text(URL(fileURLWithPath: p.root).lastPathComponent).font(.headline).foregroundStyle(Brand.text)
                     }
-                ForEach(p.items, id: \.path) { item in
+                // Keyed by full path: keyed by name alone, List reused one
+                // project's row (and size) for the same folder in another.
+                ForEach(p.items.map { (key: p.root + "/" + $0.path, item: $0) }, id: \.key) { row in
+                    let item = row.item
                     HStack {
                         Image(systemName: item.action == .move ? "arrow.right.circle.fill" : "minus.circle")
                             .foregroundStyle(item.action == .move ? Brand.teal : Brand.slate)
