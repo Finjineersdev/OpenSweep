@@ -10,3 +10,4 @@ dist/
 engine/target/
 engine/mutants.out*/
 build/
+*.pyc
