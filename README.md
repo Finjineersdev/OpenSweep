@@ -15,7 +15,7 @@
 [![macOS 14+ app, macOS and Linux CLI](https://img.shields.io/badge/macOS%2014%2B%20app%20%C2%B7%20Linux%20CLI-14171c?style=flat-square&logo=apple&logoColor=white)](#install)
 [![Homebrew cask](https://img.shields.io/badge/brew-finjineersdev%2Ftap-f5b83d?style=flat-square&logo=homebrew&logoColor=white)](https://github.com/Finjineersdev/homebrew-tap)
 
-[Install](#install) · [Watch the film](#see-it-work) · [How it works](#how-it-works) · [What it cleans](#what-it-cleans) · [Safety](#safety) · [Command line](#command-line) · [FAQ](#faq) · [Docs](#documentation)
+[Install](#install) · [See it work](#see-it-work) · [How it works](#how-it-works) · [What it cleans](#what-it-cleans) · [Safety](#safety) · [Command line](#command-line) · [FAQ](#faq) · [Docs](#documentation)
 
 <code>brew install --cask finjineersdev/tap/opensweep</code>
 
@@ -35,7 +35,7 @@
   <img src="docs/assets/screens/overview-light.png" width="1000" alt="OpenSweep Overview: 501.52 GB ready to clean across 569 folders and 8 languages, out of 1.25 TB measured">
 </picture>
 
-<sub>Screenshots and the film use a demo Mac with made-up projects: 412 projects and 1.25 TB of
+<sub>Screenshots use a demo Mac with made-up projects: 412 projects and 1.25 TB of
 build folders on a 2 TB disk (<a href="scripts/demo/engine.py"><code>scripts/demo</code></a>).
 The app, its screens and its numbers are real; the data is not.</sub>
 
@@ -58,10 +58,7 @@ and nothing leaves your Mac.
 
 <div align="center">
 
-<img src="docs/media/one-click.gif" width="880" alt="Review all ready, then one click moves 569 folders in 285 projects, 501.52 GB, into quarantine">
-
-<a href="docs/media/opensweep-demo.mp4"><img src="docs/assets/demo-poster.jpg" width="640" alt="Play the 54-second OpenSweep film"></a><br />
-<sub><a href="docs/media/opensweep-demo.mp4"><b>▶ Watch the 54-second film</b></a> (sound on) · a full Mac scanned, 501 GB cleaned in one click, and undone from History</sub>
+<img src="docs/assets/one-click.gif" width="880" alt="Review all ready, then one click moves 569 folders in 285 projects, 501.52 GB, into quarantine">
 
 </div>
 
@@ -291,13 +288,11 @@ and scan again.
 </details>
 
 <details>
-<summary><strong>How were the screenshots and the film made?</strong></summary>
+<summary><strong>How were the screenshots made?</strong></summary>
 
 The Debug app runs a scripted demo against a stand-in engine with made-up data
 (`scripts/demo/engine.py`, `scripts/demo/record.sh`); nothing on disk is read
-or moved. The film was edited with [HyperFrames](https://hyperframes.heygen.com); the voiceover
-and music are AI-generated (Google Gemini speech and Lyria). Sound effects: "VS_Short Whoosh 1" by Vilkas_Sound and "Keyboard … typing" by
-MattRuthSound, from [Freesound](https://freesound.org), CC BY 4.0.
+or moved.
 
 </details>
 

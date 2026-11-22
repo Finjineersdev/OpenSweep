@@ -30,7 +30,7 @@ The walkthrough expects projects named `shop-web` (dormant Next.js),
 
 ## README media
 
-Screenshots (`docs/assets/screens`), `docs/media/one-click.gif` and the film come
+Screenshots (`docs/assets/screens`) and `docs/assets/one-click.gif` come
 from a scripted demo in the Debug app against a stand-in engine with made-up
 data: a 2 TB Mac with 412 projects and 1.25 TB of build folders. Nothing on
 disk is read or moved.
@@ -42,8 +42,7 @@ scripts/demo/record.sh /tmp/media-light light --no-video
 
 The video needs Screen Recording permission for your terminal; the app hides the
 pointer while it plays. `timeline.json` lists when and where each button was
-pressed, for the edit. Resize screenshots with `sips -Z 1600`. The film is a
-HyperFrames project built from `demo.mp4` (kept outside the repo, in `build/promo`).
+pressed. Resize screenshots with `sips -Z 1600`.
 
 ## UI tests
 
