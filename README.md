@@ -309,11 +309,8 @@ or moved.
 Contributors and coding agents: start with [CLAUDE.md](CLAUDE.md) and
 [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY.md).
 
-## Licence and credits
+## Licence
 
-New work is under the Apache License 2.0 ([LICENSE](LICENSE)). OpenSweep is a fork
-of [Zouuabi/CleanMyDev](https://github.com/Zouuabi/CleanMyDev) (MIT); code
-inherited from it stays under its MIT licence, and code it adapted from other
-projects keeps theirs. See [NOTICE](NOTICE) and
-[THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md). The upstream README is kept
-at [docs/UPSTREAM-README.md](docs/UPSTREAM-README.md).
+OpenSweep is open source under the Apache License 2.0 ([LICENSE](LICENSE)). It
+includes third-party code under the MIT and BSD-3-Clause licences; their notices
+are in [NOTICE](NOTICE) and [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
