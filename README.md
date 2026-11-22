@@ -60,8 +60,8 @@ and nothing leaves your Mac.
 
 <img src="docs/media/one-click.gif" width="880" alt="Review all ready, then one click moves 569 folders in 285 projects, 501.52 GB, into quarantine">
 
-<a href="docs/media/opensweep-demo.mp4"><img src="docs/assets/demo-poster.jpg" width="640" alt="Play the 43-second OpenSweep film"></a><br />
-<sub><a href="docs/media/opensweep-demo.mp4"><b>▶ Watch the 43-second film</b></a> · a full Mac scanned, 501 GB cleaned in one click, and undone from History</sub>
+<a href="docs/media/opensweep-demo.mp4"><img src="docs/assets/demo-poster.jpg" width="640" alt="Play the 54-second OpenSweep film"></a><br />
+<sub><a href="docs/media/opensweep-demo.mp4"><b>▶ Watch the 54-second film</b></a> (sound on) · a full Mac scanned, 501 GB cleaned in one click, and undone from History</sub>
 
 </div>
 
@@ -295,8 +295,8 @@ and scan again.
 
 The Debug app runs a scripted demo against a stand-in engine with made-up data
 (`scripts/demo/engine.py`, `scripts/demo/record.sh`); nothing on disk is read
-or moved. The film was edited with [HyperFrames](https://hyperframes.heygen.com).
-Sound effects: "VS_Short Whoosh 1" by Vilkas_Sound and "Keyboard … typing" by
+or moved. The film was edited with [HyperFrames](https://hyperframes.heygen.com); the voiceover
+and music are AI-generated (Google Gemini speech and Lyria). Sound effects: "VS_Short Whoosh 1" by Vilkas_Sound and "Keyboard … typing" by
 MattRuthSound, from [Freesound](https://freesound.org), CC BY 4.0.
 
 </details>
