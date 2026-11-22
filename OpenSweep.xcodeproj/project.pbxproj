@@ -373,7 +373,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/OpenSweep-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Apache-2.0. Includes MIT and BSD-3-Clause code; see NOTICE.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "MIT. Includes BSD-3-Clause code; see NOTICE.";
 				SPARKLE_FEED_URL = "https://github.com/Finjineersdev/OpenSweep/releases/latest/download/appcast.xml";
 				SPARKLE_PUBLIC_KEY = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,7 +410,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/OpenSweep-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Apache-2.0. Includes MIT and BSD-3-Clause code; see NOTICE.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "MIT. Includes BSD-3-Clause code; see NOTICE.";
 				SPARKLE_FEED_URL = "https://github.com/Finjineersdev/OpenSweep/releases/latest/download/appcast.xml";
 				SPARKLE_PUBLIC_KEY = "";
 				LD_RUNPATH_SEARCH_PATHS = (

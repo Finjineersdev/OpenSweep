@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 #
 # One time, by the owner: creates OpenSweep's Sparkle update key and stores it
 # on GitHub (docs/RELEASING.md). The private key stays in your login keychain

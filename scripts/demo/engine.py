@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """A stand-in `opensweep` engine with made-up data, for README media only.
 
 It answers the app's JSON commands (docs/CLI-JSON.md) about a fictional

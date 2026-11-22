@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 //
 // Drives the real app against throwaway projects. HOME points at a temporary
 // folder, so the bundled engine uses a throwaway config and quarantine.

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 //
 // The app's only way to change files: it runs the bundled `opensweep`
 // binary (ADR 0005). Arguments go straight to the process, never through a

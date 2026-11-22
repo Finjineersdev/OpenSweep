@@ -95,4 +95,4 @@ cargo +nightly fuzz run rules_parse corpus/rules_parse seeds/rules_parse -- -max
 ```
 
 Rule files are covered by `docs/RULE-SCHEMA.md`. New work is contributed under
-the Apache License 2.0.
+the MIT License.

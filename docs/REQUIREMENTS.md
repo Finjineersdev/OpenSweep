@@ -5,7 +5,7 @@ command-line engine that also runs on Linux. This document says what v1 must
 do, what it will not do, and how each requirement is accepted.
 
 Decisions recorded 19 Nov 2026: name OpenSweep; start from Zouuabi/CleanMyDev (MIT);
-Rust engine with a SwiftUI app; Apache-2.0 for new work; developer-only scope;
+Rust engine with a SwiftUI app; MIT for new work (Apache-2.0 up to v0.2.0); developer-only scope;
 local stats and an original character, no public leaderboard; Developer ID
 with notarization and a Homebrew cask.
 

@@ -76,7 +76,7 @@ xcodebuild -project OpenSweep.xcodeproj -scheme OpenSweep \
 ## Conventions
 
 - Conventional Commits (`feat(engine): …`, `fix(guard): …`, `docs: …`).
-- New code is Apache-2.0. Inherited files keep their MIT or BSD-3-Clause
+- New code is MIT. Inherited files keep their MIT or BSD-3-Clause
   headers; never strip a notice.
 - Plain English in UI and CLI text; every cleanable item carries a reason and
   a restore hint.

@@ -6,7 +6,7 @@ members = ["crates/opensweep-core", "crates/opensweep-cli"]
 version = "0.0.1"
 edition = "2021"
 rust-version = "1.80"
-license = "Apache-2.0"
+license = "MIT"
 repository = "https://github.com/Finjineersdev/OpenSweep"
 
 [workspace.lints.rust]
