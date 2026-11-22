@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" width="1200" height="330" role="img" aria-labelledby="t d">
+  <title id="t">How OpenSweep cleans</title>
+  <desc id="d">A scan finds projects and measures folders that rules match. The safety guard approves or refuses each folder. Approved folders move to a quarantine, where they can be restored, and are deleted only when purged.</desc>
+  <style>
+    .bg { fill: #ffffff; } .box { fill: #f5f5f7; stroke: #e1e4e9; stroke-width: 1.5; }
+    .hot { fill: #e6f7f3; stroke: #08695a; stroke-width: 2; }
+    .h { font: 700 19px -apple-system, "Segoe UI", Inter, sans-serif; fill: #14171c; }
+    .p { font: 400 14.5px -apple-system, "Segoe UI", Inter, sans-serif; fill: #4e5766; }
+    .m { font: 500 13.5px ui-monospace, "SF Mono", Menlo, monospace; fill: #4e5766; }
+    .a { stroke: #4e5766; stroke-width: 2; fill: none; } .ah { fill: #4e5766; }
+    .g { stroke: #08695a; stroke-width: 2; fill: none; stroke-dasharray: 6 5; } .gh { fill: #08695a; }
+    .gl { font: 600 14px -apple-system, "Segoe UI", Inter, sans-serif; fill: #08695a; }
+    .no { font: 600 14px -apple-system, "Segoe UI", Inter, sans-serif; fill: #b4232a; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0e1013; } .box { fill: #16191e; stroke: #2a2f38; }
+      .hot { fill: #10302a; stroke: #5fe3c8; }
+      .h { fill: #eceef2; } .p, .m { fill: #a4acb9; }
+      .a { stroke: #a4acb9; } .ah { fill: #a4acb9; }
+      .g { stroke: #5fe3c8; } .gh { fill: #5fe3c8; } .gl { fill: #5fe3c8; } .no { fill: #ff8a8f; }
+    }
+  </style>
+  <rect class="bg" width="1200" height="330" rx="16"/>
+
+  <rect class="box" x="24" y="70" width="210" height="150" rx="14"/>
+  <text class="h" x="44" y="106">1 · Your projects</text>
+  <text class="p" x="44" y="134">Finds every project</text>
+  <text class="p" x="44" y="156">and measures it.</text>
+  <text class="p" x="44" y="178">Changes nothing.</text>
+
+  <rect class="box" x="264" y="70" width="210" height="150" rx="14"/>
+  <text class="h" x="284" y="106">2 · Rules</text>
+  <text class="p" x="284" y="134">One TOML file per</text>
+  <text class="p" x="284" y="156">ecosystem names what</text>
+  <text class="p" x="284" y="178">rebuilds on its own.</text>
+  <text class="m" x="284" y="203">node_modules, target…</text>
+
+  <rect class="hot" x="504" y="70" width="210" height="150" rx="14"/>
+  <text class="h" x="524" y="106">3 · Safety guard</text>
+  <text class="p" x="524" y="134">Refuses tracked files,</text>
+  <text class="p" x="524" y="156">symlinks, active and</text>
+  <text class="p" x="524" y="178">pinned projects, and</text>
+  <text class="p" x="524" y="200">anything that changed.</text>
+
+  <rect class="box" x="744" y="70" width="210" height="150" rx="14"/>
+  <text class="h" x="764" y="106">4 · Quarantine</text>
+  <text class="p" x="764" y="134">A move on the same</text>
+  <text class="p" x="764" y="156">disk. Every folder</text>
+  <text class="p" x="764" y="178">can go back.</text>
+
+  <rect class="box" x="984" y="70" width="192" height="150" rx="14"/>
+  <text class="h" x="1004" y="106">5 · Purge</text>
+  <text class="p" x="1004" y="134">Deletes for good and</text>
+  <text class="p" x="1004" y="156">frees the space: after</text>
+  <text class="p" x="1004" y="178">7 days, or by hand.</text>
+
+  <path class="a" d="M236 145 H256"/><path class="ah" d="M262 145 l-9 -5 v10 z"/>
+  <path class="a" d="M476 145 H496"/><path class="ah" d="M502 145 l-9 -5 v10 z"/>
+  <path class="a" d="M716 145 H736"/><path class="ah" d="M742 145 l-9 -5 v10 z"/>
+  <path class="a" d="M956 145 H976"/><path class="ah" d="M982 145 l-9 -5 v10 z"/>
+
+  <text class="no" x="524" y="52">refused → left where it is</text>
+  <path class="g" d="M849 222 V282 H129 V230"/><path class="gh" d="M129 224 l-5 9 h10 z"/>
+  <text class="gl" x="330" y="306">Restore: one click puts a whole clean back in its projects</text>
+</svg>
