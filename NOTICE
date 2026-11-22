@@ -1,13 +1,12 @@
 OpenSweep
 Copyright 2026 The OpenSweep contributors
 
-OpenSweep is a fork of CleanMyDev by Oubaied Allah Zouabi
-(https://github.com/Zouuabi/CleanMyDev), which is distributed under the MIT
-License. That license is reproduced in LICENSES/MIT-Zouuabi-CleanMyDev.txt and
-continues to apply to the code inherited from it.
+OpenSweep is licensed under the Apache License, Version 2.0 (see LICENSE).
 
-Code written for OpenSweep after the fork is licensed under the Apache
-License, Version 2.0 (see LICENSE).
+OpenSweep includes code from CleanMyDev by Oubaied Allah Zouabi
+(https://github.com/Zouuabi/CleanMyDev), distributed under the MIT License.
+That license is reproduced in LICENSES/MIT-Zouuabi-CleanMyDev.txt and continues
+to apply to that code.
 
 Inherited code also includes portions adapted from Mac Sai (BSD-3-Clause),
 MacDirStat (MIT), kondo (MIT) and Stats (MIT). Their notices and license texts

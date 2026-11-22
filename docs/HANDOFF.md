@@ -27,7 +27,7 @@ in this repository. Keep it that way.
 | Topic | Decision |
 | --- | --- |
 | Name | OpenSweep. A trademark and GitHub-name check is still owed before launch |
-| Base | Fork of [Zouuabi/CleanMyDev](https://github.com/Zouuabi/CleanMyDev) (MIT, Swift, unrelated to the commercial app despite the name) |
+| Base | Started from MIT-licensed code from [Zouuabi/CleanMyDev](https://github.com/Zouuabi/CleanMyDev) (Swift, unrelated to the commercial app despite the name) |
 | Engine | Rust workspace in `engine/`; it is the only code allowed to delete (ADR 0001, 0002) |
 | App | The inherited SwiftUI app, reduced and connected to the Rust engine in M3 |
 | Scope | Developer only: projects, developer caches, Docker, simulators, disk map. Remove malware, uninstaller, fan and sensor control, speed test and system junk (ADR 0003) |
@@ -40,7 +40,7 @@ in this repository. Keep it that way.
 
 - Private repository <https://github.com/Finjineersdev/OpenSweep>, branch
   `main` (the local branch `opensweep-m0` tracks it), on top of 22 upstream
-  commits. The upstream fork is the `upstream` remote. Make it public after
+  commits. The original project is the local `upstream` remote. Make it public after
   the name check and the `SECURITY.md` rewrite.
 - M0 to M3 are done; M4 (beta) is built and waits on the owner's signing keys
   and testers (`docs/milestones/M4.md`).
@@ -229,4 +229,4 @@ From the competitor's public behaviour (no code taken):
 - Planning doc (private to the owner's claude.ai account):
   <https://claude.ai/artifact/J6D1sR1tKfARcC7cHiW6Gc>. Everything an agent needs
   from it is in this file and `docs/research/AUDIT.md`.
-- Upstream: <https://github.com/Zouuabi/CleanMyDev>.
+- Original project: <https://github.com/Zouuabi/CleanMyDev>.
