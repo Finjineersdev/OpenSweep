@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 //
 // Languages and tools, shown with their own logos. The logos are Simple Icons
 // (CC0, simpleicons.org), pinned in docs/THIRD-PARTY.md; the names are the

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 //
 // What the app pre-selects and what a selection asks the engine for. The
 // engine re-checks everything; this only decides what the user starts with.

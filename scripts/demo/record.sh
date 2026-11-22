@@ -1,5 +1,5 @@
 #!/bin/sh
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 # README media: plays the Debug app's demo against the made-up 2 TB Mac in
 # scripts/demo/engine.py, snapshots every screen and records the window.
 # Usage: scripts/demo/record.sh <out-folder> [dark|light] [--no-video]

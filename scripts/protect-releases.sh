@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 #
 # One time, by the owner (docs/RELEASING.md): the release job waits for your
 # approval and runs only for v* tags, only an admin can create, move or

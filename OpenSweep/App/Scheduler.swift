@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 //
 // Scheduled clean (P5). Off by default. While OpenSweep runs (open at login
 // keeps it running in the menu bar) it rescans, then cleans Safe folders in

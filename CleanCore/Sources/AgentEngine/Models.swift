@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 //
 // Swift mirrors of the engine's JSON output, schema version 1.
 // The contract is docs/CLI-JSON.md; the tests decode the engine's own

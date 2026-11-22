@@ -31,7 +31,7 @@ in this repository. Keep it that way.
 | Engine | Rust workspace in `engine/`; it is the only code allowed to delete (ADR 0001, 0002) |
 | App | The inherited SwiftUI app, reduced and connected to the Rust engine in M3 |
 | Scope | Developer only: projects, developer caches, Docker, simulators, disk map. Remove malware, uninstaller, fan and sensor control, speed test and system junk (ADR 0003) |
-| Licence | Apache-2.0 for new work; inherited MIT and BSD-3-Clause notices kept (`NOTICE`, `LICENSES/`, `THIRD-PARTY-LICENSES.md`) |
+| Licence | MIT (Apache-2.0 up to v0.2.0); inherited MIT and BSD-3-Clause notices kept (`NOTICE`, `LICENSES/`, `THIRD-PARTY-LICENSES.md`) |
 | Game layer | Local stats and an original character in v1; no public leaderboard |
 | Distribution | Developer ID, notarization, Homebrew cask |
 | Platform | macOS 14 or later for the app (currently 26, lowered in M3); CLI on macOS and Linux |

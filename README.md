@@ -11,7 +11,7 @@
 [![Latest release](https://img.shields.io/github/v/release/Finjineersdev/OpenSweep?style=flat-square&label=release)](https://github.com/Finjineersdev/OpenSweep/releases/latest)
 [![CI](https://img.shields.io/github/actions/workflow/status/Finjineersdev/OpenSweep/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/Finjineersdev/OpenSweep/actions/workflows/ci.yml)
 [![Engine](https://img.shields.io/github/actions/workflow/status/Finjineersdev/OpenSweep/engine.yml?branch=main&style=flat-square&label=engine)](https://github.com/Finjineersdev/OpenSweep/actions/workflows/engine.yml)
-[![Apache-2.0 licence](https://img.shields.io/badge/license-Apache--2.0-5fe3c8?style=flat-square)](LICENSE)
+[![MIT licence](https://img.shields.io/badge/license-MIT-5fe3c8?style=flat-square)](LICENSE)
 [![macOS 14+ app, macOS and Linux CLI](https://img.shields.io/badge/macOS%2014%2B%20app%20%C2%B7%20Linux%20CLI-14171c?style=flat-square&logo=apple&logoColor=white)](#install)
 [![Homebrew cask](https://img.shields.io/badge/brew-finjineersdev%2Ftap-f5b83d?style=flat-square&logo=homebrew&logoColor=white)](https://github.com/Finjineersdev/homebrew-tap)
 
@@ -311,6 +311,6 @@ Contributors and coding agents: start with [CLAUDE.md](CLAUDE.md) and
 
 ## Licence
 
-OpenSweep is open source under the Apache License 2.0 ([LICENSE](LICENSE)). It
+OpenSweep is open source under the MIT License ([LICENSE](LICENSE)). It
 includes third-party code under the MIT and BSD-3-Clause licences; their notices
 are in [NOTICE](NOTICE) and [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).

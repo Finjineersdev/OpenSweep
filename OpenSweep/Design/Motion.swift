@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 //
 // Motion and characters. Every moving piece stops or shortens when
 // the person turns on Reduce Motion. The characters are Open Peeps by Pablo
