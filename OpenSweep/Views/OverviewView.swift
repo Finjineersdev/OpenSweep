@@ -90,6 +90,7 @@ struct OverviewView: View {
             .buttonStyle(PrimaryButtonStyle())
             .keyboardShortcut("r", modifiers: .command)
             .accessibilityIdentifier("scan")
+            .demoPress("scan") { model.toggleScan() }
         }
     }
 

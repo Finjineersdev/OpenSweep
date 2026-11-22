@@ -75,6 +75,7 @@ struct RootView: View {
                 && !ProcessInfo.processInfo.arguments.contains("-scanRoots")
             #if DEBUG
             await QAWalkthrough.run(model)
+            await DemoWalkthrough.run(model)
             #endif
         }
     }
