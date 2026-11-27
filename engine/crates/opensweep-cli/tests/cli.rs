@@ -244,6 +244,24 @@ fn pinned_projects_are_never_cleaned() {
 }
 
 #[test]
+fn a_pin_for_days_needs_a_folder_and_at_least_one_day() {
+    let e = env();
+    let project = e.project.to_str().unwrap();
+    // A pin for 0 days would end the moment it was made.
+    let zero = e.run(&["pin", project, "--days", "0"]);
+    assert!(!zero.status.success());
+    // Without a folder, pin only lists: --days would be dropped silently.
+    assert!(!e.run(&["pin", "--days", "7"]).status.success());
+    assert!(
+        !config_file(&e).exists(),
+        "a refused pin must not write config"
+    );
+    assert!(e
+        .ok(&["pin", project, "--days", "1"])
+        .contains("for 1 days"));
+}
+
+#[test]
 fn a_broken_config_stops_cleaning() {
     let e = env();
     let path = config_file(&e);
