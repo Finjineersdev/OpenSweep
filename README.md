@@ -183,7 +183,7 @@ project runs again, so they are never ticked for you.
 | Ecosystem | Safe | Caution |
 | --- | --- | --- |
 | Node.js | `.next` `.nuxt` `.svelte-kit` `.turbo` `.parcel-cache` `.angular/cache` `dist` `build` | `node_modules` |
-| Python | `__pycache__` `.pytest_cache` `.mypy_cache` `.ruff_cache` `.tox` | `.venv` `venv` |
+| Python | `__pycache__` `.pytest_cache` `.mypy_cache` `.ruff_cache` `.tox` `.nox` | `.venv` `venv` |
 | Go | | `vendor` |
 | Rust | `target` | |
 | Java and Kotlin | `target` `build` | `.gradle` |

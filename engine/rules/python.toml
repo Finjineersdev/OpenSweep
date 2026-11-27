@@ -48,3 +48,11 @@ path = ".tox"
 class = "safe"
 reason = "tox test environments. Recreated on the next tox run."
 restore = "tox"
+
+# https://nox.thea.codes/en/stable/usage.html: "By default Nox stores
+# virtualenvs in ./.nox".
+[[artifact]]
+path = ".nox"
+class = "safe"
+reason = "nox session environments. Recreated on the next nox run."
+restore = "nox"
