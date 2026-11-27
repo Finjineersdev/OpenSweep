@@ -1,0 +1,21 @@
+schema = 2
+id = "elixir"
+name = "Elixir (Mix)"
+
+# Defaults from https://hexdocs.pm/mix/Mix.Project.html: build_path
+# "defaults to _build" and deps_path "Defaults to deps". An umbrella's apps
+# share the umbrella's folders, so only the top mix.exs has them.
+[detect]
+any_files = ["mix.exs"]
+
+[[artifact]]
+path = "_build"
+class = "safe"
+reason = "Mix build output. Recreated by the next compile."
+restore = "mix compile"
+
+[[artifact]]
+path = "deps"
+class = "caution"
+reason = "Mix dependencies. Fetch them again from mix.lock."
+restore = "mix deps.get"

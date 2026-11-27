@@ -192,6 +192,7 @@ project runs again, so they are never ticked for you.
 | Swift Package Manager | `.build` | |
 | Xcode (CocoaPods) | | `Pods` |
 | .NET | `bin` `obj` | |
+| Elixir (Mix) | `_build` | `deps` |
 | PHP (Composer) | | `vendor` |
 
 Add your own rules in `~/Library/Application Support/OpenSweep/rules`, or keep a

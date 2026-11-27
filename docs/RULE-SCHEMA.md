@@ -106,6 +106,8 @@ rules.
 ## Contributing a rule
 
 1. Add or edit a file in `engine/rules/`, with match and nomatch fixtures.
+   A new file also goes in `BUNDLED` in `opensweep-core/src/rules.rs`, which
+   builds the catalogue into the binary.
 2. Run `cargo run -p opensweep-cli -- rules-check rules` and `cargo test`.
 3. In the pull request, link the tool's documentation that says the path is
    generated. Rule changes need two reviewers.

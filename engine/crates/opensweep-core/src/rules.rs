@@ -577,6 +577,7 @@ pub fn load_dir(dir: &Path) -> Result<Vec<RuleFile>, RuleError> {
 const BUNDLED: &[(&str, &str)] = &[
     ("android.toml", include_str!("../../../rules/android.toml")),
     ("dotnet.toml", include_str!("../../../rules/dotnet.toml")),
+    ("elixir.toml", include_str!("../../../rules/elixir.toml")),
     ("flutter.toml", include_str!("../../../rules/flutter.toml")),
     ("go.toml", include_str!("../../../rules/go.toml")),
     ("java.toml", include_str!("../../../rules/java.toml")),
