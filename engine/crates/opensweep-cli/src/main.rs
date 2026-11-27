@@ -118,9 +118,17 @@ enum Cmd {
     },
     /// Never clean this folder or anything inside it; with no folder, list pins
     Pin {
+        /// Folder to pin
         folder: Option<PathBuf>,
-        /// Only for this many days; then the project is judged as usual
-        #[arg(long, value_name = "N", conflicts_with = "remote")]
+        /// Only for this many days (at least 1); then the project is judged
+        /// as usual
+        #[arg(
+            long,
+            value_name = "N",
+            conflicts_with = "remote",
+            requires = "folder",
+            value_parser = clap::value_parser!(u64).range(1..)
+        )]
         days: Option<u64>,
         /// Pin the folder's git repository (its origin remote) wherever it
         /// is cloned, instead of this path
@@ -128,7 +136,10 @@ enum Cmd {
         remote: bool,
     },
     /// Remove a pin
-    Unpin { folder: PathBuf },
+    Unpin {
+        /// Folder (or clone of a pinned repository) to unpin
+        folder: PathBuf,
+    },
     /// Show the settings, or change them. Changes only OpenSweep's config.
     Config {
         /// Projects changed within this many days are Active
