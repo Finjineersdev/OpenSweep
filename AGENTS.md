@@ -20,8 +20,12 @@ and what to do next. The milestone plan in progress is `docs/milestones/M2.md`.
 3. **A safety change ships with a test that fails without it.** The invariants
    and their tests are listed in `docs/SAFETY-SPEC.md`; keep that table current.
 4. **Changing commands are dry runs unless `--execute`.** Caution-class folders
-   also need `--include-caution`. Keep it that way in every new command.
-5. **No network code** in the engine, and none in the app beyond the updater.
+   also need `--include-caution`, and active projects `--include-active`;
+   pinned projects are never cleaned. Keep it that way in every new command.
+   Only `pin`, `unpin` and `config` skip `--execute`: they change OpenSweep's
+   config, never a project.
+5. **No network code** in the engine, and none in the app beyond the Sparkle
+   updater (`OpenSweep/App/Updater.swift`).
 6. **Treat scanned repositories as hostile input.** Run git only with the
    hardened flags in `guard::check_untracked`; never build shell strings.
 7. **Clean-room.** OpenSweep competes with the closed-source app CleanMyDev
@@ -51,13 +55,17 @@ $B plan  --rules rules /tmp/some-copy
 $B clean --rules rules --store /tmp/q /tmp/some-copy        # dry run
 ```
 
-Inherited Mac app (Swift, untouched since the rename, not yet rebuilt):
+Mac app (runs the bundled engine, ADR 0005; macOS 14+, Xcode 16+):
 
 ```bash
-cd CleanCore && swift test
-xcodebuild -project OpenSweep.xcodeproj -scheme OpenSweep \
-  -configuration Debug -derivedDataPath build/dd build       # macOS 26 SDK, Xcode 26+
+(cd engine && cargo build) && (cd CleanCore && swift test)
+scripts/check-swift-never-deletes.sh
+xcodebuild -project OpenSweep.xcodeproj -scheme OpenSweep -configuration Debug \
+  -derivedDataPath build/dd build CODE_SIGN_IDENTITY=-    # also builds the engine
 ```
+
+QA the app against throwaway projects with the Debug walkthrough in
+`QA-CHECKLIST.md` (`OPENSWEEP_QA=<folder>`, `HOME` pointed at a temp folder).
 
 ## Layout
 
@@ -67,10 +75,17 @@ xcodebuild -project OpenSweep.xcodeproj -scheme OpenSweep \
 | `engine/crates/opensweep-core/src/deny.rs` | Names that are never deletable |
 | `engine/crates/opensweep-core/src/guard.rs` | Safety guard, `Approved`, `reverify` |
 | `engine/crates/opensweep-core/src/quarantine.rs` | Runs, manifest, restore, purge |
+| `engine/crates/opensweep-core/src/discover.rs` | Project discovery walk |
+| `engine/crates/opensweep-core/src/activity.rs` | Active, Idle, Dormant verdicts; config and pins |
 | `engine/crates/opensweep-core/src/size.rs` | Allocated-size measurement |
+| `engine/crates/opensweep-core/src/volumes.rs` | Mount table, drive roots, network drives |
+| `engine/crates/opensweep-core/src/caches.rs` | Global tool caches, cleared by each tool's own command (ADR 0006) |
 | `engine/crates/opensweep-cli/` | `opensweep` binary and end-to-end tests |
 | `engine/rules/*.toml` | Rule catalogue, one file per ecosystem |
-| `OpenSweep/`, `CleanCore/` | Inherited SwiftUI app and Swift engine (to be reduced in M3) |
+| `CleanCore/Sources/AgentEngine` | Swift client for the engine CLI; selection rules |
+| `OpenSweep/` | SwiftUI app; never touches files itself |
+| `CleanCore/Sources/CleanCore` | Read-only Dev Stack inventory |
+| `OpenSweepUITests/` | XCUITest suite |
 | `docs/` | Handoff, requirements, safety spec, rule schema, ADRs, research, milestones |
 
 ## Conventions
@@ -82,13 +97,21 @@ xcodebuild -project OpenSweep.xcodeproj -scheme OpenSweep \
   a restore hint.
 - Sizes in decimal units (KB, MB, GB), as Finder shows them.
 
-## Inherited Swift app: things that bit upstream
+## Swift app: things that bit
 
+- The engine helper lives in `Contents/Helpers`, never `Contents/MacOS`: the
+  file system ignores case and `opensweep` replaces `OpenSweep`.
+- Never call `Process.waitUntilExit()` from async code; it hangs on Swift's
+  concurrency threads. Use the termination handler (see `Engine.launch`).
 - Never read the observable `AppModel` from `.commands {}` or a Scene-level
   binding setter without a change guard; it spins the main thread.
-- A stable code signature is required; ad-hoc builds re-trigger Full Disk
-  Access prompts that look like a hung scan.
 - Docker sizes: use `UniqueSize` from `docker system df -v`.
+- Hardened runtime is on only for Developer ID builds (the Release workflow
+  sets it). With an ad-hoc signature it makes macOS refuse the bundled
+  Sparkle.framework and the app dies at launch; CI launches the Release app.
+- The UI test runner is sandboxed: files it writes are quarantined and
+  macOS will not execute them. A stand-in tool must be a link to `/bin/sh`
+  reading a script file (see the npm fixture).
 - `URL.path(percentEncoded:)` for the home folder ends with `/`.
 - Project discovery must walk below a project (monorepos) but skip bundles
   (`.xcodeproj`, `.app`), tool caches (`~/go/pkg`) and artifact folders.
