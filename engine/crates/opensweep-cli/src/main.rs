@@ -1346,7 +1346,8 @@ fn human(bytes: u64) -> String {
     const UNITS: [&str; 5] = ["B", "KB", "MB", "GB", "TB"];
     let mut value = bytes as f64;
     let mut unit = 0;
-    while value >= 1000.0 && unit < UNITS.len() - 1 {
+    // 999.95 KB would print as "1000.0 KB": step up once it rounds to 1000.
+    while value >= 999.95 && unit < UNITS.len() - 1 {
         value /= 1000.0;
         unit += 1;
     }
@@ -1364,11 +1365,21 @@ fn day(unix: u64) -> String {
 }
 
 #[cfg(test)]
-mod day_tests {
+mod format_tests {
     #[test]
     fn dates_are_utc_calendar_days() {
         assert_eq!(super::day(0), "1970-01-01");
         assert_eq!(super::day(951_782_400), "2000-02-29");
         assert_eq!(super::day(1_795_651_200), "2026-11-26");
+    }
+
+    #[test]
+    fn sizes_never_print_as_a_thousand_of_a_unit() {
+        assert_eq!(super::human(999), "999 B");
+        assert_eq!(super::human(1_000), "1.0 KB");
+        assert_eq!(super::human(999_949), "999.9 KB");
+        assert_eq!(super::human(999_950), "1.0 MB");
+        assert_eq!(super::human(999_999_999), "1.0 GB");
+        assert_eq!(super::human(1_500_000_000_000), "1.5 TB");
     }
 }
