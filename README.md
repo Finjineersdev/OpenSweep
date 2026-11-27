@@ -216,7 +216,14 @@ their tests are listed in [docs/SAFETY-SPEC.md](docs/SAFETY-SPEC.md).
 ## Command line
 
 The engine runs on macOS and Linux. With the cask installed, `opensweep` is on
-your PATH; from source, `cd engine && cargo build`.
+your PATH. On Linux, or on a Mac without the app, build it with Rust 1.80 or
+later:
+
+```bash
+cargo install --locked --git https://github.com/Finjineersdev/OpenSweep opensweep-cli
+```
+
+From a clone, `cd engine && cargo build`.
 
 ```bash
 opensweep scan                                   # every project in your home folder, read-only
