@@ -5,7 +5,7 @@ something that cannot be rebuilt. This document states the invariants that
 prevent it. Each invariant names the code that enforces it and the test that
 proves it. A change that weakens an invariant needs an ADR.
 
-Status: **I1–I15c, I18 and I19 are implemented and tested** in `engine/crates/opensweep-core`.
+Status: **I1–I15c and I18–I22 are implemented and tested** in `engine/crates/opensweep-core`.
 I16 and I17 are specified and not implemented yet.
 
 ## Model
