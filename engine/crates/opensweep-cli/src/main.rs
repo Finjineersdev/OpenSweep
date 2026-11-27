@@ -245,7 +245,7 @@ fn main() -> ExitCode {
             other_drives,
             &store,
         ),
-        Cmd::Plan { rules, project } => plan(rules.as_deref(), &project),
+        Cmd::Plan { rules, project } => plan(rules.as_deref(), &absolute(&project)),
         Cmd::Clean {
             rules,
             include_caution,
@@ -256,7 +256,7 @@ fn main() -> ExitCode {
             projects,
         } => clean(
             rules.as_deref(),
-            &projects,
+            &projects.iter().map(|p| absolute(p)).collect::<Vec<_>>(),
             Flags {
                 caution: include_caution,
                 active: include_active,
@@ -299,6 +299,16 @@ fn main() -> ExitCode {
         }
         ExitCode::FAILURE
     })
+}
+
+/// A project path typed relative to the working folder (`plan .`), made
+/// absolute: the guard refuses every relative candidate. Absolute paths and
+/// folders that do not exist are left as given.
+fn absolute(project: &Path) -> PathBuf {
+    if project.is_absolute() {
+        return project.to_path_buf();
+    }
+    std::fs::canonicalize(project).unwrap_or_else(|_| project.to_path_buf())
 }
 
 fn load_rules(dir: Option<&Path>) -> Result<Vec<RuleFile>, String> {

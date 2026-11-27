@@ -119,6 +119,30 @@ fn clean_is_a_dry_run_by_default() {
 }
 
 #[test]
+fn a_project_given_relative_to_the_working_folder_is_checked() {
+    let e = env();
+    let run_in_project = |args: &[&str]| {
+        let out = Command::new(env!("CARGO_BIN_EXE_opensweep"))
+            .args(args)
+            .current_dir(&e.project)
+            .env("HOME", &e.home)
+            .env_remove("XDG_DATA_HOME")
+            .env_remove("XDG_CONFIG_HOME")
+            .output()
+            .unwrap();
+        assert!(out.status.success(), "{args:?}");
+        String::from_utf8(out.stdout).unwrap()
+    };
+    let plan = run_in_project(&["plan", "--rules", RULES, "."]);
+    assert!(plan.contains("allow   .next"), "{plan}");
+    assert!(!plan.contains("not absolute"), "{plan}");
+    let store = e.store.to_str().unwrap();
+    let clean = run_in_project(&["clean", "--rules", RULES, "--store", store, "../site"]);
+    assert!(clean.contains("move    .next"), "{clean}");
+    assert!(clean.contains("Dry run"), "{clean}");
+}
+
+#[test]
 fn a_folder_two_rules_claim_is_offered_once() {
     let e = env();
     let p = &e.project;
