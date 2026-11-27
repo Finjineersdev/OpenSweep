@@ -1,6 +1,6 @@
 [
   {
-    "artifacts": 31,
+    "artifacts": 32,
     "command": "rules-check",
     "rule_files": 11,
     "schema_version": 1
